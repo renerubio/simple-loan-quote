@@ -1,21 +1,15 @@
 import React from 'react';
 import constants from '../texts';
 
-const Resultado = ({ total, plazo, cantidad }) => {
-  const textosDinamicos = {
-    cantidad: `La cantidad solicitada es: €${cantidad}`,
-    plazoMeses: `A pagar en: ${plazo} meses`,
-    pagoMensual: `Su pago mensual es: €${total / plazo}`,
-    total: `Total a pagar: €${total}`,
-  };
+const Result = ({ total, term, amount }) => {
   return (
     <div className="u-full-width resultado">
-      <h2>{constants.titleResult}</h2>
-      <p>{textosDinamicos.cantidad}</p>
-      <p>{textosDinamicos.plazoMeses}</p>
-      <p>{textosDinamicos.pagoMensual}</p>
-      <p>{textosDinamicos.total}</p>
+      <h2>{constants.result.titleResult}</h2>
+      <p>{constants.result.amount} <b>{parseFloat(amount).toFixed(2)} €</b></p>
+      <p>{constants.result.toPayIn} <b>{term}</b> {constants.result.termMonths}</p>
+      <p>{constants.result.paymentMonthly} <b>{parseFloat(total / term).toFixed(2)} €</b></p>
+      <p>{constants.result.total} <b>{parseFloat(total).toFixed(2)} €</b></p>
     </div>
   );
 };
-export default Resultado;
+export default Result;

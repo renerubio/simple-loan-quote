@@ -1,25 +1,24 @@
 import React, { useState } from 'react';
 import Header from './components/Header.js';
-import Formulario from './components/Form.js';
+import FormLoan from './components/Form.js';
 import Mensaje from './components/Messages.js';
-import Resultado from './components/Result.js';
+import Result from './components/Result.js';
 import Spinner from './components/Spinner.js';
 import constants from './texts';
 
 function App() {
-  // Definir el state
-  const [cantidad, guardarCantidad] = useState(0);
-  const [plazo, guardarPlazo] = useState('');
-  const [total, guardarTotal] = useState(0);
-  const [cargando, guardarCargando] = useState(false);
+  const [amount, setQuantity] = useState(0);
+  const [term, setTerm] = useState(0);
+  const [total, setTotal] = useState(0);
+  const [loading, setLoading] = useState(0);
 
-  let componente;
-  if (cargando && cantidad > 0) {
-    componente = <Spinner />;
-  } else if (cantidad === 0) {
-    componente = <Mensaje />;
+  let componentChoice = null;
+  if (amount > 0 && loading) {
+    componentChoice = <Spinner />;
+  } else if (total === 0 || term === 0) {
+    componentChoice = <Mensaje />;
   } else {
-    componente = <Resultado total={total} plazo={plazo} cantidad={cantidad} />;
+    componentChoice = <Result total={total} term={term} amount={amount} />;
   }
 
   return (
@@ -29,16 +28,16 @@ function App() {
         descripcion={constants.header.descripcion}
       />
       <div className="container my-container">
-        <Formulario
-          cantidad={cantidad}
-          guardarCantidad={guardarCantidad}
-          plazo={plazo}
-          guardarPlazo={guardarPlazo}
+        <FormLoan
+          amount={amount}
+          setQuantity={setQuantity}
+          term={term}
+          setTerm={setTerm}
           total={total}
-          guardarTotal={guardarTotal}
-          guardarCargando={guardarCargando}
+          setTotal={setTotal}
+          setLoading={setLoading}
         />
-        <div className="mensajes">{componente}</div>
+        <div className="mensajes">{componentChoice}</div>
       </div>
     </>
   );
