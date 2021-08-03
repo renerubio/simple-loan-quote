@@ -1,6 +1,41 @@
-# Getting Started with Create React App
+# React APP simple form to calculate a loan quote
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Table of contents
+
+[Project structure](#project-structure)
+
+[Installation](#installation)
+
+[Technologies used](#technologies-used)
+
+
+## Project structure
+
+```
+build/
+src/
+|- index.js _______________________________ # Application entry
+|- index.scss ______________________________ # Application styles
+|- skeleton.scss ___________________________ # Application framework styles
+|- App.js _________________________________ # Application init
+|- helper.js _______________________________ # Utilities functions
+|- textos.js _______________________________ # Constant of strings
+|  |- components/
+|    |- Formulario.js _____________________ # UI application
+|    |- Header.js _________________________ # Text preface application
+|    |- Mensaje.js ________________________ # UI about notifications
+|    |- Resultado.js ______________________ # UI about calc result
+|    |- Spinner.js ________________________ # UI loading
+|    |- Spinner.scss _______________________ # UI loading styles
+
+```
+
+## Installation
+
+1- Clone repo `git clone git@github.com:renerubio/simple-loan-quote.git`
+
+2- `npm install` to install npm packages
+
 
 ## Available Scripts
 
@@ -29,42 +64,20 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## Technologies used
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- [Create React App](https://github.com/facebook/create-react-app)
+- [React Hooks](https://github.com/facebook/react)
+- [Jest](https://github.com/facebook/jest) [ Unit test]
+- [Eslint](https://github.com/eslint/eslint/) with airbnb config
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Author
+```js
+{
+	license: "MIT",
+	name: "René Rubio",
+	role: "Frontend developer",
+	alias: "renerubio",	
+	linkedin: "www.linkedin.com/in/rene-rubio"
+}
+```
