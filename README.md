@@ -14,21 +14,22 @@
 ```
 build/
 src/
-|- index.js _______________________________ # Application entry
-|- index.scss ______________________________ # Application styles
-|- skeleton.scss ___________________________ # Application framework styles
-|- App.js _________________________________ # Application init
-|- helper.js _______________________________ # Utilities functions
-|- textos.js _______________________________ # Constant of strings
+|- index.js _____________________________ # Application entry
+|- index.scss ___________________________ # Application styles
+|- skeleton.scss ________________________ # Application framework styles
+|- App.js _______________________________ # Application init
+|- helper.js ____________________________ # Utilities functions
+|- texts.js _____________________________ # Constant of strings
 |  |- components/
-|    |- Formulario.js _____________________ # UI application
+|    |- Form.js ___________________________ # UI application
 |    |- Header.js _________________________ # Text preface application
-|    |- Mensaje.js ________________________ # UI about notifications
-|    |- Resultado.js ______________________ # UI about calc result
+|    |- Message.js ________________________ # UI about notifications
+|    |- Result.js _________________________ # UI about calc result
 |    |- Spinner.js ________________________ # UI loading
-|    |- Spinner.scss _______________________ # UI loading styles
+|    |- Spinner.scss ______________________ # UI loading styles
 
 ```
+
 
 ## Installation
 
@@ -46,8 +47,8 @@ In the project directory, you can run:
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### `npx eslint --init`
+Runs the configuration of rules to write code -> I've used eslint-plugin-react-hooks
 
 ### `npm test`
 
