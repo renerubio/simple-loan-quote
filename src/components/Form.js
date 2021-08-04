@@ -5,22 +5,22 @@ import constants from '../texts';
 const FormLoan = ({ amount, setQuantity, term, setTerm, setTotal, setLoading }) => {
 
   const total = calculateTotal(amount, term);
-  setTotal(total);
+  setTotal(Number(total));
 
   useEffect(() => {
     if (amount > 0 && term >= 3) {
       setLoading(true);
       setTimeout(() => {
         setLoading(false);
-      }, 3000);
+      }, 1000);
     }
   }, [amount, setLoading, term]);
 
   const handleOnChangeAmount = (e) => {
-    setQuantity(e.target.value);
+    setQuantity(Number(e.target.value));
   }
   const handleOnChangeTerm = (e) => {
-    setTerm(e.target.value);
+    setTerm(Number(e.target.value));
   }
   return (
     <>

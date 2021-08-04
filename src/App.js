@@ -12,6 +12,7 @@ function App() {
   const [total, setTotal] = useState(0);
   const [loading, setLoading] = useState(0);
 
+  console.log(typeof term, term);
   let componentChoice = null;
   if (amount > 0 && loading) {
     componentChoice = <Spinner />;
