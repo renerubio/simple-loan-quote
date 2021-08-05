@@ -2,22 +2,20 @@ import React, { useEffect } from 'react';
 import { calculateTotal } from '../helper';
 import constants from '../texts';
 
-const FormLoan = ({ amount, setQuantity, term, setTerm, setTotal, setLoading }) => {
-
-  const total = calculateTotal(amount, term);
-  setTotal(Number(total));
+const FormLoan = ({ amountLoan, setAmountLoan, term, setTerm, setTotal, setLoading }) => {
 
   useEffect(() => {
-    if (amount > 0 && term >= 3) {
+    setTotal(calculateTotal(amountLoan, term));
+    if (amountLoan > 0 && term >= 3) {
       setLoading(true);
       setTimeout(() => {
         setLoading(false);
       }, 1000);
     }
-  }, [amount, setLoading, term]);
+  }, [amountLoan, setLoading, setTotal, term]);
 
   const handleOnChangeAmount = (e) => {
-    setQuantity(Number(e.target.value));
+    setAmountLoan(Number(e.target.value));
   }
   const handleOnChangeTerm = (e) => {
     setTerm(Number(e.target.value));
@@ -27,13 +25,13 @@ const FormLoan = ({ amount, setQuantity, term, setTerm, setTotal, setLoading }) 
       <form>
         <div className="row">
           <div>
-            <label htmlFor="amountLoan">{constants.form.labelQuantity}</label>
+            <label htmlFor="amountLoanLoan">{constants.form.labelQuantity}</label>
             <input
               className="u-full-width"
               type="number"
               placeholder={constants.form.placeholder}
               onChange={e => handleOnChangeAmount(e)}
-              id="amountLoan" />
+              id="amountLoanLoan" />
           </div>
           <div>
             <label>{constants.form.labelTerm}</label>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from './components/Header.js';
 import FormLoan from './components/Form.js';
 import Mensaje from './components/Messages.js';
@@ -7,20 +7,21 @@ import Spinner from './components/Spinner.js';
 import constants from './texts';
 
 function App() {
-  const [amount, setQuantity] = useState(0);
+  const [amountLoan, setAmountLoan] = useState(0);
   const [term, setTerm] = useState(0);
   const [total, setTotal] = useState(0);
   const [loading, setLoading] = useState(0);
+  const [componentChoice, setComponentChoice] = useState();
 
-  console.log(typeof term, term);
-  let componentChoice = null;
-  if (amount > 0 && loading) {
-    componentChoice = <Spinner />;
-  } else if (total === 0 || term === 0) {
-    componentChoice = <Mensaje />;
-  } else {
-    componentChoice = <Result total={total} term={term} amount={amount} />;
-  }
+  useEffect(() => {
+    if (amountLoan > 0 && loading) {
+      setComponentChoice(<Spinner />);
+    } else if (total === 0 || term === 0) {
+      setComponentChoice(<Mensaje />);
+    } else {
+      setComponentChoice(<Result total={total} term={term} amountLoan={amountLoan} />);
+    }
+  }, [amountLoan, loading, term, total]);
 
   return (
     <>
@@ -30,8 +31,8 @@ function App() {
       />
       <div className="container my-container">
         <FormLoan
-          amount={amount}
-          setQuantity={setQuantity}
+          amountLoan={amountLoan}
+          setAmountLoan={setAmountLoan}
           term={term}
           setTerm={setTerm}
           total={total}

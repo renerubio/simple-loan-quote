@@ -15,12 +15,12 @@ const constants = Object.freeze({
     _24_months: '24 months',
     calculate: 'Calculate',
     instructions:
-      'To calculate the quote for an amount and select the term to pay',
+      'To calculate the quote for an amountLoan and select the term to pay',
     error: 'All fields are required'
   },
   result: {
     titleResult: 'Summary',
-    amount: 'The amount requested: ',
+    amountLoan: 'The amountLoan requested: ',
     toPayIn: 'To pay in ',
     termMonths: ' months ',
     paymentMonthly: 'Your monthly payment is: ',
