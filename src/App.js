@@ -28,12 +28,12 @@ function App() {
       <div className="container my-container">
         <FormLoan
           amountLoan={amountLoan}
-          setAmountLoan={setAmountLoan}
+          updateAmountLoan={setAmountLoan}
           term={term}
-          setTerm={setTerm}
+          updateTerm={setTerm}
           total={total}
-          setTotal={setTotal}
-          setLoading={setLoading}
+          updateTotal={setTotal}
+          updateLoading={setLoading}
         />
         <div className="mensajes">{componentChoice}</div>
       </div>

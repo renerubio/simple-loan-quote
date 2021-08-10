@@ -1,23 +1,23 @@
 import React, { useEffect } from 'react';
 import { calculateTotal, constants } from './../utils';
 
-const FormLoan = ({ amountLoan, setAmountLoan, term, setTerm, setTotal, setLoading }) => {
+const FormLoan = ({ amountLoan, updateAmountLoan, term, updateTerm, updateTotal, updateLoading }) => {
 
   useEffect(() => {
-    setTotal(calculateTotal(amountLoan, term));
+    updateTotal(calculateTotal(amountLoan, term));
     if (amountLoan > 0 && term >= 3) {
-      setLoading(true);
+      updateLoading(true);
       setTimeout(() => {
-        setLoading(false);
+        updateLoading(false);
       }, 1000);
     }
-  }, [amountLoan, setLoading, setTotal, term]);
+  }, [amountLoan, updateLoading, updateTotal, term]);
 
   const handleOnChangeAmount = (e) => {
-    setAmountLoan(Number(e.target.value));
+    updateAmountLoan(Number(e.target.value));
   }
   const handleOnChangeTerm = (e) => {
-    setTerm(Number(e.target.value));
+    updateTerm(Number(e.target.value));
   }
   return (
     <form>
