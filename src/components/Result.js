@@ -1,14 +1,14 @@
 import React from 'react';
-import { constants } from '../utils';
-
-const Result = ({ total, term, amountLoan }) => {
+import { constants, formatValue } from '../utils';
+const { titleResult, amountLoan, toPayIn, termMonths, paymentMonthly, total } = constants.result;
+const Result = ({ totalValue, term, amountLoanValue }) => {
   return (
     <div className="u-full-width resultado">
-      <h2>{constants.result.titleResult}</h2>
-      <p>{constants.result.amountLoan} <b>{parseFloat(amountLoan).toFixed(2)} €</b></p>
-      <p>{constants.result.toPayIn} <b>{term}</b> {constants.result.termMonths}</p>
-      <p>{constants.result.paymentMonthly} <b>{parseFloat(total / term).toFixed(2)} €</b></p>
-      <p>{constants.result.total} <b>{parseFloat(total).toFixed(2)} €</b></p>
+      <h2>{titleResult}</h2>
+      <p>{amountLoan} <b>{formatValue(amountLoanValue)} €</b></p>
+      <p>{toPayIn} <b>{term}</b> {termMonths}</p>
+      <p>{paymentMonthly} <b>{formatValue(totalValue / term)} €</b></p>
+      <p>{total} <b>{formatValue(totalValue)} €</b></p>
     </div>
   );
 };

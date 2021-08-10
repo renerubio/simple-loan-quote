@@ -1,4 +1,4 @@
-const calculateTotal = (amountLoan, term) => {
+export const calculateTotal = (amountLoan, term) => {
   let totalQuantity;
   if (amountLoan <= 1000) {
     totalQuantity = amountLoan * 0.25;
@@ -24,4 +24,5 @@ const calculateTotal = (amountLoan, term) => {
   return resultados.map(item => Number(item)).reduce((a, b) => a + b);
 };
 
-export default calculateTotal;
+
+export const formatValue = (value, toFixed = 2) => (parseFloat(value).toFixed(toFixed))
