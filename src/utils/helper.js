@@ -1,4 +1,4 @@
-export const calculateTotal = (amountLoan, term) => {
+const calculateTotal = (amountLoan, term) => {
   let totalQuantity;
   if (amountLoan <= 1000) {
     totalQuantity = amountLoan * 0.25;

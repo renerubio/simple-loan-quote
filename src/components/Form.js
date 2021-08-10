@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
-import { calculateTotal } from '../helper';
-import constants from '../texts';
+import { calculateTotal, constants } from './../utils';
 
 const FormLoan = ({ amountLoan, setAmountLoan, term, setTerm, setTotal, setLoading }) => {
 
@@ -21,33 +20,31 @@ const FormLoan = ({ amountLoan, setAmountLoan, term, setTerm, setTotal, setLoadi
     setTerm(Number(e.target.value));
   }
   return (
-    <>
-      <form>
-        <div className="row">
-          <div>
-            <label htmlFor="amountLoanLoan">{constants.form.labelQuantity}</label>
-            <input
-              className="u-full-width"
-              type="number"
-              placeholder={constants.form.placeholder}
-              onChange={e => handleOnChangeAmount(e)}
-              id="amountLoanLoan" />
-          </div>
-          <div>
-            <label>{constants.form.labelTerm}</label>
-            <select
-              className="u-full-width"
-              onChange={e => handleOnChangeTerm(e)}>
-              <option value="0">{constants.form.select}</option>
-              <option value="3">{constants.form._3_months}</option>
-              <option value="6">{constants.form._6_months}</option>
-              <option value="12">{constants.form._12_months}</option>
-              <option value="24">{constants.form._24_months}</option>
-            </select>
-          </div>
+    <form>
+      <div className="row">
+        <div>
+          <label htmlFor="amountLoanLoan">{constants.form.labelQuantity}</label>
+          <input
+            className="u-full-width"
+            type="number"
+            placeholder={constants.form.placeholder}
+            onChange={e => handleOnChangeAmount(e)}
+            id="amountLoanLoan" />
         </div>
-      </form>
-    </>
+        <div>
+          <label>{constants.form.labelTerm}</label>
+          <select
+            className="u-full-width"
+            onChange={e => handleOnChangeTerm(e)}>
+            <option value="0">{constants.form.select}</option>
+            <option value="3">{constants.form._3_months}</option>
+            <option value="6">{constants.form._6_months}</option>
+            <option value="12">{constants.form._12_months}</option>
+            <option value="24">{constants.form._24_months}</option>
+          </select>
+        </div>
+      </div>
+    </form>
   );
 };
 

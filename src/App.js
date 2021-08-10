@@ -1,10 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import Header from './components/Header.js';
-import FormLoan from './components/Form.js';
-import Mensaje from './components/Messages.js';
-import Result from './components/Result.js';
-import Spinner from './components/Spinner.js';
-import constants from './texts';
+import { Header, FormLoan, Message, Result, Spinner } from './components';
+import { constants } from './utils';
 
 function App() {
   const [amountLoan, setAmountLoan] = useState(0);
@@ -17,7 +13,7 @@ function App() {
     if (amountLoan > 0 && loading) {
       setComponentChoice(<Spinner />);
     } else if (total === 0 || term === 0) {
-      setComponentChoice(<Mensaje />);
+      setComponentChoice(<Message />);
     } else {
       setComponentChoice(<Result total={total} term={term} amountLoan={amountLoan} />);
     }

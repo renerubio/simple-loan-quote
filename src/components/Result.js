@@ -1,5 +1,5 @@
 import React from 'react';
-import constants from '../texts';
+import { constants } from '../utils';
 
 const Result = ({ total, term, amountLoan }) => {
   return (
