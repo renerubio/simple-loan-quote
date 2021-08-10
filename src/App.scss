@@ -1,38 +1,82 @@
-.App {
+html {
+  height: 100%;
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+      "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: linear-gradient(90deg, #53946e 0%, #8086c5 100%);
+    height: 100%;
+  }
+}
+
+
+
+h1 {
+  color: white;
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 2rem;
+  font-weight: bold;
+}
+
+.my-container {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 1rem;
+  margin-top: 2rem;
+  height: auto;
+  min-height: 80%;
+}
+
+form,
+.mensajes {
+  padding: 2rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.mensajes {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.resultado {
+  border: 2px solid #00b0d7;
+  padding: 3rem 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+form label {
+  text-align: center;
+  font-size: 2rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+input[type="submit"]:disabled {
+  opacity: .2;
+  color: black;
+}
+
+.error {
+  background-color: white;
+  border: 2px solid red;
+  padding: .5rem;
+  text-align: center;
+  color: red;
+  text-transform: uppercase;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.resultado p {
+  margin: 0;
+}
+
+.color-white {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+p {
+  text-align: center;
+  font-size: 2rem;
 }
