@@ -1,7 +1,7 @@
-const constants = Object.freeze({
+const texts = Object.freeze({
   header: {
     title: 'Calculate your Loan',
-    descripcion:
+    description:
       'Fill in all the fields of the form and get a quote',
   },
   form: {
@@ -28,4 +28,4 @@ const constants = Object.freeze({
   }
 });
 
-export default constants;
+export default texts;

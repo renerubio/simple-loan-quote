@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Header, FormLoan, Message, Result, Spinner } from './components';
-import { constants } from './utils';
+import { texts } from './utils';
 
 function App() {
+  const { header } = texts;
   const [amountLoan, setAmountLoan] = useState(0);
   const [term, setTerm] = useState(0);
   const [total, setTotal] = useState(0);
@@ -22,8 +23,8 @@ function App() {
   return (
     <>
       <Header
-        titulo={constants.header.title}
-        descripcion={constants.header.descripcion}
+        title={header.title}
+        description={header.description}
       />
       <div className="container my-container">
         <FormLoan

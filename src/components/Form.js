@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { calculateTotal, constants } from './../utils';
+import { calculateTotal, texts } from './../utils';
 
 const FormLoan = ({ amountLoan, updateAmountLoan, term, updateTerm, updateTotal, updateLoading }) => {
 
@@ -23,24 +23,24 @@ const FormLoan = ({ amountLoan, updateAmountLoan, term, updateTerm, updateTotal,
     <form>
       <div className="row">
         <div>
-          <label htmlFor="amountLoanLoan">{constants.form.labelQuantity}</label>
+          <label htmlFor="amountLoanLoan">{texts.form.labelQuantity}</label>
           <input
             className="u-full-width"
             type="number"
-            placeholder={constants.form.placeholder}
+            placeholder={texts.form.placeholder}
             onChange={e => handleOnChangeAmount(e)}
             id="amountLoanLoan" />
         </div>
         <div>
-          <label>{constants.form.labelTerm}</label>
+          <label>{texts.form.labelTerm}</label>
           <select
             className="u-full-width"
             onChange={e => handleOnChangeTerm(e)}>
-            <option value="0">{constants.form.select}</option>
-            <option value="3">{constants.form._3_months}</option>
-            <option value="6">{constants.form._6_months}</option>
-            <option value="12">{constants.form._12_months}</option>
-            <option value="24">{constants.form._24_months}</option>
+            <option value="0">{texts.form.select}</option>
+            <option value="3">{texts.form._3_months}</option>
+            <option value="6">{texts.form._6_months}</option>
+            <option value="12">{texts.form._12_months}</option>
+            <option value="24">{texts.form._24_months}</option>
           </select>
         </div>
       </div>

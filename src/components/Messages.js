@@ -1,5 +1,5 @@
 import React from 'react';
-import { constants } from '../utils';
+import { texts } from '../utils';
 
-const Message = () => <p>{constants.form.instructions}</p>;
+const Message = () => <p>{texts.form.instructions}</p>;
 export default Message;

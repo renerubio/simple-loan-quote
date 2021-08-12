@@ -1,6 +1,6 @@
 import React from 'react';
-import { constants, formatValue } from '../utils';
-const { titleResult, amountLoan, toPayIn, termMonths, paymentMonthly, total } = constants.result;
+import { texts, formatValue } from '../utils';
+const { titleResult, amountLoan, toPayIn, termMonths, paymentMonthly, total } = texts.result;
 const Result = ({ totalValue, term, amountLoanValue }) => {
   return (
     <div className="u-full-width result">

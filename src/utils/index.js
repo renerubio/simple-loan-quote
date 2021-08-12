@@ -1,3 +1,3 @@
 import { calculateTotal, formatValue } from './helper';
-import constants from './texts';
-export { calculateTotal, formatValue, constants };
+import texts from './texts';
+export { calculateTotal, formatValue, texts };
