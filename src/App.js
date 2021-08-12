@@ -15,7 +15,7 @@ function App() {
     } else if (total === 0 || term === 0) {
       setComponentChoice(<Message />);
     } else {
-      setComponentChoice(<Result total={total} term={term} amountLoan={amountLoan} />);
+      setComponentChoice(<Result totalValue={total} term={term} amountLoanValue={amountLoan} />);
     }
   }, [amountLoan, loading, term, total]);
 
