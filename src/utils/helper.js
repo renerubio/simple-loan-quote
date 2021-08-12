@@ -24,5 +24,4 @@ export const calculateTotal = (amountLoan, term) => {
   return resultados.map(item => Number(item)).reduce((a, b) => a + b);
 };
 
-
-export const formatValue = (value, toFixed = 2) => (parseFloat(value).toFixed(toFixed))
+export const formatValue = (value, toFixed = 2) => (parseFloat(value).toFixed(toFixed) + ' €')

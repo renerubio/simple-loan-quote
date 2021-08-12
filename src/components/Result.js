@@ -5,10 +5,10 @@ const Result = ({ totalValue, term, amountLoanValue }) => {
   return (
     <div className="u-full-width resultado">
       <h2>{titleResult}</h2>
-      <p>{amountLoan} <b>{formatValue(amountLoanValue)} €</b></p>
+      <p>{amountLoan} <b>{formatValue(amountLoanValue)}</b></p>
       <p>{toPayIn} <b>{term}</b> {termMonths}</p>
-      <p>{paymentMonthly} <b>{formatValue(totalValue / term)} €</b></p>
-      <p>{total} <b>{formatValue(totalValue)} €</b></p>
+      <p>{paymentMonthly} <b>{formatValue(totalValue / term)}</b></p>
+      <p>{total} <b>{formatValue(totalValue)}</b></p>
     </div>
   );
 };
