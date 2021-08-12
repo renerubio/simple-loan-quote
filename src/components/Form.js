@@ -3,6 +3,8 @@ import { calculateTotal, texts } from './../utils';
 
 const FormLoan = ({ amountLoan, updateAmountLoan, term, updateTerm, updateTotal, updateLoading }) => {
 
+  const { labelQuantity, placeholder, labelTerm, select, _3_months, _6_months, _12_months, _24_months } = texts.form;
+
   useEffect(() => {
     updateTotal(calculateTotal(amountLoan, term));
     if (amountLoan > 0 && term >= 3) {
@@ -23,24 +25,24 @@ const FormLoan = ({ amountLoan, updateAmountLoan, term, updateTerm, updateTotal,
     <form>
       <div className="row">
         <div>
-          <label htmlFor="amountLoanLoan">{texts.form.labelQuantity}</label>
+          <label htmlFor="amountLoanLoan">{labelQuantity}</label>
           <input
             className="u-full-width"
             type="number"
-            placeholder={texts.form.placeholder}
-            onChange={e => handleOnChangeAmount(e)}
+            placeholder={placeholder}
+            onChange={handleOnChangeAmount}
             id="amountLoanLoan" />
         </div>
         <div>
-          <label>{texts.form.labelTerm}</label>
+          <label>{labelTerm}</label>
           <select
             className="u-full-width"
-            onChange={e => handleOnChangeTerm(e)}>
-            <option value="0">{texts.form.select}</option>
-            <option value="3">{texts.form._3_months}</option>
-            <option value="6">{texts.form._6_months}</option>
-            <option value="12">{texts.form._12_months}</option>
-            <option value="24">{texts.form._24_months}</option>
+            onChange={handleOnChangeTerm}>
+            <option value="0">{select}</option>
+            <option value="3">{_3_months}</option>
+            <option value="6">{_6_months}</option>
+            <option value="12">{_12_months}</option>
+            <option value="24">{_24_months}</option>
           </select>
         </div>
       </div>

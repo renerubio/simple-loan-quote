@@ -1,14 +1,9 @@
 export const calculateTotal = (amountLoan, term) => {
   let totalQuantity;
-  if (amountLoan <= 1000) {
-    totalQuantity = amountLoan * 0.25;
-  } else if (amountLoan > 1000 && amountLoan <= 5000) {
-    totalQuantity = amountLoan * 0.2;
-  } else if (amountLoan > 5000 && amountLoan <= 10000) {
-    totalQuantity = amountLoan * 0.15;
-  } else {
-    totalQuantity = amountLoan * 0.1;
-  }
+  totalQuantity = (amountLoan <= 1000) && (amountLoan * 0.25);
+  totalQuantity = (amountLoan > 1000 && amountLoan <= 5000) && (amountLoan * 0.2);
+  totalQuantity = (amountLoan > 5000 && amountLoan <= 10000) && (amountLoan * 0.15);
+  totalQuantity = (amountLoan > 10001) && (amountLoan * 0.1);
 
   const getTermTotal = (term) => {
     return {

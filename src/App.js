@@ -11,21 +11,15 @@ function App() {
   const [componentChoice, setComponentChoice] = useState();
 
   useEffect(() => {
-    if (amountLoan > 0 && loading) {
-      setComponentChoice(<Spinner />);
-    } else if (total === 0 || term === 0) {
-      setComponentChoice(<Message />);
-    } else {
-      setComponentChoice(<Result totalValue={total} term={term} amountLoanValue={amountLoan} />);
-    }
+    ((amountLoan > 0 && loading) && setComponentChoice(<Spinner />));
+    ((total === 0 || term === 0) && setComponentChoice(<Message />));
+    ((amountLoan > 0 && term > 0 && !loading) && setComponentChoice(<Result totalValue={total} term={term} amountLoanValue={amountLoan} />));
+
   }, [amountLoan, loading, term, total]);
 
   return (
     <>
-      <Header
-        title={header.title}
-        description={header.description}
-      />
+      <Header title={header.title} description={header.description} />
       <div className="container my-container">
         <FormLoan
           amountLoan={amountLoan}
