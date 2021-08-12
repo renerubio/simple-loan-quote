@@ -3,7 +3,7 @@ import { constants, formatValue } from '../utils';
 const { titleResult, amountLoan, toPayIn, termMonths, paymentMonthly, total } = constants.result;
 const Result = ({ totalValue, term, amountLoanValue }) => {
   return (
-    <div className="u-full-width resultado">
+    <div className="u-full-width result">
       <h2>{titleResult}</h2>
       <p>{amountLoan} <b>{formatValue(amountLoanValue)}</b></p>
       <p>{toPayIn} <b>{term}</b> {termMonths}</p>

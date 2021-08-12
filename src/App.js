@@ -35,7 +35,7 @@ function App() {
           updateTotal={setTotal}
           updateLoading={setLoading}
         />
-        <div className="mensajes">{componentChoice}</div>
+        <div className="messages">{componentChoice}</div>
       </div>
     </>
   );

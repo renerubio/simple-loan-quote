@@ -19,9 +19,9 @@ export const calculateTotal = (amountLoan, term) => {
     }[term]
   };
 
-  const resultados = [getTermTotal(term), totalQuantity, amountLoan];
+  const results = [getTermTotal(term), totalQuantity, amountLoan];
 
-  return resultados.map(item => Number(item)).reduce((a, b) => a + b);
+  return results.map(item => Number(item)).reduce((a, b) => a + b);
 };
 
 export const formatValue = (value, toFixed = 2) => (parseFloat(value).toFixed(toFixed) + ' €')
