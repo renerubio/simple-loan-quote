@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Header = ({ titulo, descripcion }) => (
+const Header = ({ title, descripcion }) => (
   <>
-    <h1>{titulo}</h1>
+    <h1>{title}</h1>
     <p className="color-white">{descripcion}</p>
   </>
 );
